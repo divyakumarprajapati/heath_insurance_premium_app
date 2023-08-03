@@ -54,7 +54,9 @@ export const fetchAllPremium = () => {
 
 export const addPremiumToCart = (premium) => {
   return async function (dispatch) {
-    await dispatch(addPremium(premium));
+    await dispatch(
+      addPremium({ ...premium, uid: localStorage.getItem("uid") })
+    );
     // await axios
     //   .post(`${API}/premiums`)
     //   .then((res) => dispatch(addPremium(res.data)))
