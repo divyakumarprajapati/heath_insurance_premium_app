@@ -1,0 +1,54 @@
+[
+  {
+    "membersPremium": [
+      {
+        "name": "Adult 1",
+        "age": 57,
+        "base_rate": 14102,
+        "floater_discount_percentage": 0,
+        "discounted_rate": 14102
+      },
+      {
+        "name": "Adult 2",
+        "age": 52,
+        "base_rate": 141020,
+        "floater_discount_percentage": 50,
+        "discounted_rate": 7051
+      },
+      {
+        "name": "Children 1",
+        "age": 17,
+        "base_rate": 10120,
+        "floater_discount_percentage": 50,
+        "discounted_rate": 5060
+      }
+    ],
+    "total": 262151
+  },
+  {
+    "membersPremium": [
+      {
+        "name": "Adult 1",
+        "age": 57,
+        "base_rate": 14102,
+        "floater_discount_percentage": 0,
+        "discounted_rate": 14102
+      },
+      {
+        "name": "Adult 2",
+        "age": 52,
+        "base_rate": 141020,
+        "floater_discount_percentage": 50,
+        "discounted_rate": 7051
+      },
+      {
+        "name": "Children 1",
+        "age": 17,
+        "base_rate": 10120,
+        "floater_discount_percentage": 50,
+        "discounted_rate": 5060
+      }
+    ],
+    "total": 262151
+  }
+]
