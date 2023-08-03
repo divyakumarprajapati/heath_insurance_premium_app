@@ -36,8 +36,12 @@ const FamilyDetailsFormIterativeFields = (props) => {
           fieldData={input}
           key={index}
           index={index}
+          min={props.min}
+          max={props.max}
+          placeholder={props.placeholder}
           handleFormChange={handleFormChange}
           removeFields={removeFields}
+          showDelete={props.minCount === undefined || index > props.minCount}
         />
       ))}
     </div>

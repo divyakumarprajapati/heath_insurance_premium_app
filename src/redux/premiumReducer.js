@@ -8,6 +8,7 @@ const initialState = {
   premium: {},
   allPremiums: [],
   checkoutPremium: {},
+  uid: "",
 };
 
 const premiumReducer = (state = initialState, action) => {

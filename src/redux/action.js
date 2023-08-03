@@ -29,26 +29,14 @@ const addPremium = (premium) => {
   };
 };
 
-export const fetchPremium = () => {
+export const fetchPremium = (membersData) => {
   return async function (dispatch) {
     await axios
-      .post(
-        `${API}/premium`,
-        JSON.stringify({
-          members: [
-            { name: "name1", age: 12 },
-            { name: "name2", age: 32 },
-          ],
-          city_tier: 1,
-          sum_insured: 300000,
-          tenure: 1,
-        }),
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      )
+      .post(`${API}/premium`, JSON.stringify(membersData), {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
       .then((res) => dispatch(getPremium(res.data)))
       .catch((err) => console.error(err));
   };
