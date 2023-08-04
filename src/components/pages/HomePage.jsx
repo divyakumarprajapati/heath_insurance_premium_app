@@ -10,7 +10,7 @@ const HomePage = () => {
       <Col>
         <FamilyDetailsForm />
       </Col>
-      <Col>
+      <Col className="my-5 mx-3">
         <PremiumPlan />
       </Col>
     </Row>

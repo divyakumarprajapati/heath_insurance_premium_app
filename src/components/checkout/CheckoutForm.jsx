@@ -21,12 +21,14 @@ const CheckoutForm = (props) => {
     props.handleSubmit();
   };
   return (
-    <div xs="6">
-      <h1>Health Insurance Checkout</h1>
+    <div xs="6" className=" d-flex flex-column justify-content-start">
+      <h3 className="my-3">Purchase Plan</h3>
       <PremiumPlanTable premium={state.premium} />
-      <Form className="mx-4" onSubmit={onSubmit}>
-        <Form.Group className="mb-1 justify-content-start">
-          <Form.Label>Name:</Form.Label>
+      <Form className="mx-5 py-3 px-3 bg-light rounded" onSubmit={onSubmit}>
+        <Form.Group className="mb-1">
+          <div className="d-flex justify-content-start">
+            <Form.Label>Name:</Form.Label>
+          </div>
           <Form.Control
             name="name"
             value={formData.name}
@@ -35,7 +37,9 @@ const CheckoutForm = (props) => {
           />
         </Form.Group>
         <Form.Group className="mb-1  justify-content-start">
-          <Form.Label>Email:</Form.Label>
+          <div className="d-flex justify-content-start">
+            <Form.Label>Email:</Form.Label>
+          </div>
           <Form.Control
             type="email"
             name="email"
@@ -44,7 +48,9 @@ const CheckoutForm = (props) => {
             required
           />
         </Form.Group>
-        <Button type="submit">PAY</Button>
+        <Button type="submit" className="my-3">
+          PURCHASE
+        </Button>
       </Form>
     </div>
   );

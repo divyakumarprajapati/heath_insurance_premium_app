@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CheckoutForm from "../checkout/CheckoutForm";
 import CheckoutSuccess from "../checkout/CheckoutSuccess";
 import { useSelector } from "react-redux";
-import { Col } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 
 const CheckoutPage = () => {
   const [purchaseSuccessful, setPurchaseSuccessful] = useState(false);
@@ -12,7 +12,7 @@ const CheckoutPage = () => {
   const state = useSelector((state) => state.premiumReducer);
 
   return (
-    <div className="justify-content-center mx-5">
+    <Row className="justify-content-center mx-5">
       <Col xs={6}>
         {purchaseSuccessful ? (
           <CheckoutSuccess
@@ -25,7 +25,7 @@ const CheckoutPage = () => {
           <CheckoutForm handleSubmit={handleSubmit} />
         )}
       </Col>
-    </div>
+    </Row>
   );
 };
 
