@@ -9,6 +9,10 @@ import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
 
 function App() {
+  if (localStorage.getItem("uid") === undefined) {
+    const uid = 1211;
+    localStorage.setItem("uid", uid);
+  }
   return (
     <div className="App">
       <Provider store={store}>

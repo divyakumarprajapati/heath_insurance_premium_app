@@ -9,9 +9,16 @@ const CartPage = () => {
 
   const state = useSelector((state) => state.premiumReducer);
 
-  return state.allPremiums.map((premium, index) => (
-    <PremiumPlanTable key={index} premium={premium} />
-  ));
+  return (
+    <div className="my-5 px-5">
+      {state.allPremiums.map((premium, index) => (
+        <div key={index} className="d-flex flex-column justify-content-start">
+          <div>Plan {index + 1}</div>
+          <PremiumPlanTable premium={premium} />
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default CartPage;

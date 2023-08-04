@@ -15,19 +15,26 @@ const FamilyDetailsFormField = (props) => {
           onChange={(event) => {
             return props.handleFormChange(event, props.index);
           }}
+          required
         />
       </Col>
       <Col>
         <Form.Control
           name="age"
           type="number"
-          placeholder="Age of"
+          placeholder={props.placeholder}
+          min={props.min}
+          max={props.max}
           value={props.age}
           onChange={(event) => props.handleFormChange(event, props.index)}
+          required
         />
       </Col>
+
       <Col xs={1}>
-        <CloseButton onClick={() => props.removeFields(props.index)} />
+        {props.showDelete && (
+          <CloseButton onClick={() => props.removeFields(props.index)} />
+        )}{" "}
       </Col>
     </Row>
   );

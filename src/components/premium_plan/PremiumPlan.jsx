@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 const PremiumPlan = () => {
   const state = useSelector((state) => state.premiumReducer);
-  return <PremiumPlanTable premium={state.premium} />;
+  return <PremiumPlanTable premium={state.premium} showAddCartButton={true} />;
 };
 
 export default PremiumPlan;

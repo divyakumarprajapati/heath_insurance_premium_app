@@ -42,16 +42,17 @@ const PremiumPlanTable = (props) => {
             <td>Total</td>
             <td>{props.premium.total}</td>
             <td>
-              <Button
-                variant="link"
-                size="sm"
-                onClick={async () => {
-                  await dispatch(addPremiumToCart(props.premium));
-                  navigate("/checkout");
-                }}
-              >
-                Add to cart
-              </Button>
+              {props.showAddCartButton && (
+                <Button
+                  size="sm"
+                  onClick={async () => {
+                    await dispatch(addPremiumToCart(props.premium));
+                    navigate("/checkout");
+                  }}
+                >
+                  Add to cart
+                </Button>
+              )}
             </td>
           </tr>
         </tbody>
