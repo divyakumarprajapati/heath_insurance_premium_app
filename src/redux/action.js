@@ -5,7 +5,7 @@ import {
 } from "./actionTypes";
 import axios from "axios";
 
-const API = "http://localhost:8080";
+const API = "https://health-insurance-server.onrender.com";
 
 const getPremium = (premium) => {
   return {
