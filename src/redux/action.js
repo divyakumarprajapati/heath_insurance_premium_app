@@ -4,7 +4,6 @@ import {
   ADD_PREMIUM_TO_CART,
 } from "./actionTypes";
 import axios from "axios";
-import allPremiums from "./premium_mock_data.json";
 
 const API = "http://localhost:8080";
 
@@ -44,22 +43,22 @@ export const fetchPremium = (membersData) => {
 
 export const fetchAllPremium = () => {
   return async function (dispatch) {
-    await dispatch(getAllPremium(allPremiums));
-    // axios
-    //   .get(`${API}/premiums`)
-    //   .then((res) => dispatch(getAllPremium(res.data)))
-    //   .catch((err) => console.error(err));
+    axios
+      .get(`${API}/premiums`)
+      .then((res) => dispatch(getAllPremium(res.data.premiums)))
+      .catch((err) => console.error(err));
   };
 };
 
 export const addPremiumToCart = (premium) => {
   return async function (dispatch) {
-    await dispatch(
-      addPremium({ ...premium, uid: localStorage.getItem("uid") })
-    );
-    // await axios
-    //   .post(`${API}/premiums`)
-    //   .then((res) => dispatch(addPremium(res.data)))
-    //   .catch((err) => console.error(err));
+    await axios
+      .post(`${API}/premiums`, JSON.stringify(premium), {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => dispatch(addPremium(res.data)))
+      .catch((err) => console.error(err));
   };
 };
